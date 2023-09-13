@@ -1,21 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Header from './components/shareds/Header/header';
 import Router from './routes';
 import './styles/vendors.scss';
 
 const App = () => (
-  <main>
-    <p>App Works!</p>
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/about">About</Link>
-      </li>
-    </ul>
-    <Router />
-  </main>
+  <>
+    <Header />
+    <main>
+      <Router />
+    </main>
+  </>
 );
 
 export default App;
