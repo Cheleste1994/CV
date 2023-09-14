@@ -9,6 +9,11 @@ const fetchRequest = <TResponse>(url: string, config: RequestInit = {}): Promise
     .then((response) => response.json())
     .then((data) => data as TResponse);
 
+export const fetchReq = <TResponse>(url: string): Promise<TResponse> =>
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => data as TResponse);
+
 const request = {
   get: <TResponse>(url: string) =>
     fetchRequest<TResponse>(url, { method: 'GET', headers: defaultHeaders }),

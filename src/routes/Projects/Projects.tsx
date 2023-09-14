@@ -1,57 +1,26 @@
 import React from 'react';
+import LaptopIcon from '@mui/icons-material/Laptop';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import { useAppSelector } from '../../store/hooks';
+import { selectProjects } from '../../store/slices/projects.slice';
 import './projects.scss';
 
 export default function Projects() {
-  return (
-    <div className="projects">
-      <iframe
-        src="https://cheleste1994.github.io/project/rs-css/"
-        title="External Website"
-        className="rs-css"
-        key="rs-css"
-      />
-      <iframe
-        src="https://cheleste1994.github.io/project/shelter/pages/main/"
-        title="External Website"
-        className="shelter"
-        key="shelter"
-      />
-      <iframe
-        src="https://cheleste1994.github.io/project/minesweeper/"
-        title="External Website"
-        className="minesweeper"
-        key="minesweeper"
-      />
-      <iframe
-        src="https://cheleste1994.github.io/virtual-keyboard/"
-        title="External Website"
-        className="virtual-keyboard"
-        key="virtual-keyboard"
-      />
-      <iframe
-        src="https://cheleste1994.github.io/project/momentum/"
-        title="External Website"
-        className="momentum"
-        key="momentum"
-      />
-      <iframe
-        src="https://cheleste1994.github.io/cssBayan/cssBayan/"
-        title="External Website"
-        className="cssBayan"
-        key="cssBayan"
-      />
-      <iframe
-        src="https://cheleste1994.github.io/project/async-race/"
-        title="External Website"
-        className="async-race"
-        key="async-race"
-      />
-      <iframe
-        src="https://cheleste1994.github.io/project/migration-newip-to-ts/"
-        title="External Website"
-        className="migration-newip-to-ts"
-        key="migration-newip-to-ts"
-      />
+  const useSelector = useAppSelector(selectProjects);
+
+  const iFrameArray = useSelector.map((project, index) => (
+    <div key={project.name || index}>
+      <span className="projects__title">
+        <a href={project.src || ''}>
+          <LaptopIcon />
+        </a>
+        <a href={project.github || ''}>
+          <GitHubIcon />
+        </a>
+      </span>
+      <iframe src={project.src || ''} title="External Website" className="projects__iframe" />
     </div>
-  );
+  ));
+
+  return <div className="projects">{iFrameArray}</div>;
 }
