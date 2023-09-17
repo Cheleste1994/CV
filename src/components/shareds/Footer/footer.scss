@@ -12,10 +12,11 @@
       height: 100%;
       width: 25px;
       transition: all 1s;
+      color: #ffffffa4;
     }
 
     svg:hover {
-      color: red;
+      color: rgba(255, 0, 0, 0.678);
     }
   }
 }

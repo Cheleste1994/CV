@@ -33,27 +33,41 @@
         a {
           width: 100%;
 
-          display: flex;
-          flex-wrap: wrap;
-          width: 100%;
-          gap: 10px;
-
           button {
             transition: all 0.5s;
             border-bottom: 1px solid #ffffff10;
-            padding: 20px 0;
+            padding: 20px 0 20px 50px;
             width: 100%;
-            color: #fff;
+            color: #ffffffa4;
             font-size: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+
             svg {
-              color: #fff;
+              color: #ffffffa4;
               margin-right: 10px;
             }
           }
         }
 
+        .nav__active {
+          button {
+            color: #fff;
+            svg {
+              color: #fff;
+            }
+          }
+        }
+
         button:hover {
+          color: #fff;
           background-color: rgba(25, 118, 210, 0.205);
+
+          svg {
+            transition: all 0.5s;
+            color: #fff;
+          }
         }
       }
     }

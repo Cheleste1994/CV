@@ -1,7 +1,11 @@
 import { Button } from '@mui/material';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import CardTravelIcon from '@mui/icons-material/CardTravel';
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import ArtTrackIcon from '@mui/icons-material/ArtTrack';
+import HomeIcon from '@mui/icons-material/Home';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import './header.scss';
 
@@ -15,24 +19,56 @@ export default function Header() {
         </div>
         <div className="nav-container">
           <div className="nav">
-            <Link to="/">
-              <Button>HOME</Button>
-            </Link>
-            <Link to="/about">
-              <Button>ABOUT ME</Button>
-            </Link>
-            <Link to="/about">
-              <Button>RESUME</Button>
-            </Link>
-            <Link to="/projects">
-              <Button>PROJECTS </Button>
-            </Link>
-            <Link to="/contact">
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? 'nav__active' : '')}
+              key="home"
+            >
+              <Button>
+                <HomeIcon />
+                HOME
+              </Button>
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? 'nav__active' : '')}
+              key="about"
+            >
+              <Button>
+                <PermIdentityIcon />
+                ABOUT ME
+              </Button>
+            </NavLink>
+            <NavLink
+              to="/resume"
+              className={({ isActive }) => (isActive ? 'nav__active' : '')}
+              key="resume"
+            >
+              <Button>
+                <ArtTrackIcon />
+                RESUME
+              </Button>
+            </NavLink>
+            <NavLink
+              to="/projects"
+              className={({ isActive }) => (isActive ? 'nav__active' : '')}
+              key="projects"
+            >
+              <Button>
+                <CardTravelIcon />
+                PROJECTS
+              </Button>
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => (isActive ? 'nav__active' : '')}
+              key="contact"
+            >
               <Button>
                 <MailOutlineIcon />
                 CONTACT
               </Button>
-            </Link>
+            </NavLink>
           </div>
           <Footer />
         </div>

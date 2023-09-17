@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './contact.scss';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { Button, Input } from '@mui/material';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import CallIcon from '@mui/icons-material/Call';
 import { handleEmailChange, handleSubmit } from '../../common/validation';
 
 const Contact = () => {
@@ -124,6 +127,26 @@ const Contact = () => {
         ) : (
           <div />
         )}
+      </div>
+      <div className="contact__info">
+        <div className="info__item">
+          <a href="https://t.me/cheleste1994">
+            <TelegramIcon />
+            @cheleste1994
+          </a>
+        </div>
+        <div className="info__item">
+          <a href="mailto:wolverines@tut.by">
+            <AlternateEmailIcon />
+            wolverines@tut.by
+          </a>
+        </div>
+        <div className="info__item">
+          <a href="tel:+375259249250">
+            <CallIcon />
+            +375259249250
+          </a>
+        </div>
       </div>
     </div>
   );
