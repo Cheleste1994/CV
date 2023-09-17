@@ -6,6 +6,7 @@ import Home from './Home';
 
 const About = lazy(() => import('./About'));
 const Projects = lazy(() => import('./Projects/Projects'));
+const Contact = lazy(() => import('./Contact/Contact'));
 
 const Router: FunctionComponent = () => (
   <Routes>
@@ -23,6 +24,14 @@ const Router: FunctionComponent = () => (
       element={
         <Suspense fallback={<Spin />}>
           <About />
+        </Suspense>
+      }
+    />
+    <Route
+      path="contact"
+      element={
+        <Suspense fallback={<Spin />}>
+          <Contact />
         </Suspense>
       }
     />

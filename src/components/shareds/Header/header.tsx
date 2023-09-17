@@ -1,4 +1,5 @@
 import { Button } from '@mui/material';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
@@ -14,21 +15,24 @@ export default function Header() {
         </div>
         <div className="nav-container">
           <div className="nav">
-            <Button>
-              <Link to="/">HOME</Link>
-            </Button>
-            <Button>
-              <Link to="/about">ABOUT ME</Link>
-            </Button>
-            <Button>
-              <Link to="/about">RESUME</Link>
-            </Button>
-            <Button>
-              <Link to="/projects">PROJECTS</Link>
-            </Button>
-            <Button>
-              <Link to="/about">CONTACT</Link>
-            </Button>
+            <Link to="/">
+              <Button>HOME</Button>
+            </Link>
+            <Link to="/about">
+              <Button>ABOUT ME</Button>
+            </Link>
+            <Link to="/about">
+              <Button>RESUME</Button>
+            </Link>
+            <Link to="/projects">
+              <Button>PROJECTS </Button>
+            </Link>
+            <Link to="/contact">
+              <Button>
+                <MailOutlineIcon />
+                CONTACT
+              </Button>
+            </Link>
           </div>
           <Footer />
         </div>
