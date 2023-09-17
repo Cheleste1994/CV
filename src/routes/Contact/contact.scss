@@ -67,19 +67,12 @@
         input {
           padding: 0 10px;
           height: 100%;
+          background-color: #ffffff00;
         }
 
         input:focus {
           border: 3px solid #ffffff;
         }
-      }
-
-      .email__valid {
-        color: #46b450;
-      }
-
-      .email__notValid {
-        color: #ff0000;
       }
 
       .name::before,
@@ -98,6 +91,28 @@
 
       .email::before {
         content: 'Email';
+        width: 100px;
+      }
+
+      .email__valid {
+        color: #46b450;
+      }
+      .email__valid::before,
+      .email__notValid::before {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        width: max-content;
+        padding-right: 30px;
+        height: 25px;
+      }
+
+      .email__valid::before {
+        background-image: url('../../assets/where_to_vote_black_24dp.svg');
+      }
+
+      .email__notValid::before {
+        background-image: url('../../assets/error_outline_black_24dp.svg');
       }
 
       .message__label::before {

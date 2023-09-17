@@ -10,7 +10,8 @@ const Contact = () => {
 
   const [focusEmail, setFocusEmail] = useState('');
   const [valueEmail, setValueEmail] = useState('');
-  const [emailValid, setEmailValid] = useState(true);
+  const [styleEmail, setStyleEmail] = useState('');
+  const [emailValid, setEmailValid] = useState(false);
 
   const [focusMessage, setFocusMessage] = useState('');
   const [valueMessage, setValueMessage] = useState('');
@@ -80,17 +81,22 @@ const Contact = () => {
             name="email"
             type="text"
             value={valueEmail}
-            className={`email ${focusEmail} ${emailValid ? 'email__valid' : 'email__notValid'}`}
+            className={`email ${focusEmail} ${styleEmail}`}
             onFocus={() => handleFocus('email')}
             onBlur={() => handleFocus()}
-            onChange={(e) =>
+            onChange={(e) => {
               handleEmailChange(
                 e.target.value,
                 setValueEmail,
                 setEmailValid,
                 setCustomValidationMessage,
-              )
-            }
+              );
+              if (emailValid) {
+                setStyleEmail('email__valid');
+              } else {
+                setStyleEmail('email__notValid');
+              }
+            }}
             title={customValidationMessage}
           />
           <label htmlFor="message" className={`message__label ${focusMessage}`}>
