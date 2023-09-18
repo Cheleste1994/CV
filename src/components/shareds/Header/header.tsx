@@ -15,7 +15,7 @@ export default function Header() {
       <div className="header-mobile" />
       <div className="header-main">
         <div className="image-container">
-          <div className="avatar" />
+          <div className="avatar">ANDREI SHAMAYEU</div>
         </div>
         <div className="nav-container">
           <div className="nav">

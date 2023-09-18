@@ -1,11 +1,11 @@
 import React from 'react';
-import Counter from '../../components/partials/Home/Counter';
 import Quote from '../../components/shareds/Quote';
+import Background from '../../components/partials/Background/Background';
 
 const Home = () => (
   <div className="Home">
-    <Counter />
     <Quote />
+    <Background />
   </div>
 );
 

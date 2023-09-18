@@ -1,6 +1,7 @@
 import React from 'react';
 import LaptopIcon from '@mui/icons-material/Laptop';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import CardTravelIcon from '@mui/icons-material/CardTravel';
 import { useAppSelector } from '../../store/hooks';
 import { selectProjects } from '../../store/slices/projects.slice';
 import './projects.scss';
@@ -22,5 +23,15 @@ export default function Projects() {
     </div>
   ));
 
-  return <div className="projects">{iFrameArray}</div>;
+  return (
+    <>
+      <div className="title">
+        Projects.
+        <div className="title__icon">
+          <CardTravelIcon />
+        </div>
+      </div>
+      <div className="projects">{iFrameArray}</div>
+    </>
+  );
 }

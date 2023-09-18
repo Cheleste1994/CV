@@ -4,11 +4,10 @@
   flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
-
+  gap: 20px;
   > * {
     position: relative;
     height: 500px;
-    margin-top: 20px;
 
     .projects__title {
       position: absolute;
