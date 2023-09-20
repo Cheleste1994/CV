@@ -32,13 +32,9 @@ a:active {
 
   main {
     flex: 1;
-    padding: 20px 50px;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
-    background-image: url(https://watson.cosmos-themes.com/dark/wp-content/uploads/2021/05/home-bg.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
 
     .title {
       display: flex;

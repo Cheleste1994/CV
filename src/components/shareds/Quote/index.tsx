@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import addHoverElement from '../../../common/addHoverElement';
+import { addHoverElement, removeHoverElement } from '../../../common/hoverElement';
 import randomIntFromInterval from '../../../common/random-number.helper';
 import './quote.scss';
 
@@ -34,11 +34,10 @@ const Quote = () => {
       .map((char) => <span key={randomIntFromInterval(0, new Date().getTime())}>{char}</span>);
 
   return (
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <blockquote
       className="Quote"
       onMouseMove={(e) => addHoverElement(e)}
-      onMouseDown={(e) => addHoverElement(e)}
+      onMouseLeave={() => removeHoverElement()}
     >
       <div className="cursor" />
       {textSplitSpan(`"${randomQuote.text}" - `)} {textSplitSpan(randomQuote.author)}
