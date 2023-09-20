@@ -4,34 +4,56 @@ import { fetchReq } from '../../common/request';
 
 const URL_PROJECTS_JSON = 'src/assets/projects.json';
 
-export interface IProjects {
+interface IProjectsArray {
   name: null | string;
   src: null | string;
   github: null | string;
 }
 
-const initialState: IProjects[] = [
-  {
-    name: null,
-    src: null,
-    github: null,
-  },
-];
+export interface IProjects {
+  projects: IProjectsArray[];
+  count: number;
+  length: number;
+}
 
-export const fetchProjects = createAsyncThunk('projects', async (): Promise<IProjects[]> => {
-  const response = await fetchReq<IProjects[]>(URL_PROJECTS_JSON);
+const initialState: IProjects = {
+  projects: [
+    {
+      name: null,
+      src: null,
+      github: null,
+    },
+  ],
+  length: 0,
+  count: 0,
+};
+
+export const fetchProjects = createAsyncThunk('projects', async (): Promise<IProjectsArray[]> => {
+  const response = await fetchReq<IProjectsArray[]>(URL_PROJECTS_JSON);
   return response;
 });
 
 export const projectsSlice = createSlice({
   name: 'projects',
   initialState,
-  reducers: {},
+  reducers: {
+    incrementCount: (state) => ({
+      ...state,
+      count: state.count < state.length ? state.count + 1 : state.count,
+    }),
+  },
   extraReducers: (builder) => {
-    builder.addCase(fetchProjects.fulfilled, (_state, action) => [...action.payload]);
+    builder.addCase(fetchProjects.fulfilled, (state, action) => ({
+      ...state,
+      projects: [...action.payload],
+      length: [...action.payload].length,
+      count: [...action.payload].length > 0 ? 3 : 0,
+    }));
   },
 });
 
 export const selectProjects = (state: RootState) => state.projects;
+
+export const { incrementCount } = projectsSlice.actions;
 
 export default projectsSlice.reducer;

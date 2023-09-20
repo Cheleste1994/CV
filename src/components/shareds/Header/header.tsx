@@ -1,7 +1,6 @@
 import { Button } from '@mui/material';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import CardTravelIcon from '@mui/icons-material/CardTravel';
-import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import ArtTrackIcon from '@mui/icons-material/ArtTrack';
 import HomeIcon from '@mui/icons-material/Home';
 import React from 'react';
@@ -27,16 +26,6 @@ export default function Header() {
               <Button>
                 <HomeIcon />
                 HOME
-              </Button>
-            </NavLink>
-            <NavLink
-              to="/about"
-              className={({ isActive }) => (isActive ? 'nav__active' : '')}
-              key="about"
-            >
-              <Button>
-                <PermIdentityIcon />
-                ABOUT ME
               </Button>
             </NavLink>
             <NavLink
