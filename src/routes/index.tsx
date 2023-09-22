@@ -1,9 +1,9 @@
 import React, { FunctionComponent, lazy, Suspense } from 'react';
 import { Spin } from 'antd';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 
-import Home from './Home';
-
+const Home = lazy(() => import('./Home'));
 const About = lazy(() => import('./About'));
 const Projects = lazy(() => import('./Projects/Projects'));
 const Contact = lazy(() => import('./Contact/Contact'));
@@ -16,56 +16,21 @@ const Router: FunctionComponent = () => (
         <Suspense
           fallback={
             <div className="suspense">
-              <Spin className="spin__active" />
+              <Spin className="spin__active" size="large" tip="Loading" />
             </div>
           }
         >
-          <Home />
+          <CSSTransition in timeout={300} classNames="page-transition" unmountOnExit>
+            <Outlet />
+          </CSSTransition>
         </Suspense>
       }
-    />
-    <Route
-      path="projects"
-      element={
-        <Suspense
-          fallback={
-            <div className="suspense">
-              <Spin className="spin__active" />
-            </div>
-          }
-        >
-          <Projects />
-        </Suspense>
-      }
-    />
-    <Route
-      path="about"
-      element={
-        <Suspense
-          fallback={
-            <div className="suspense">
-              <Spin className="spin__active" />
-            </div>
-          }
-        >
-          <About />
-        </Suspense>
-      }
-    />
-    <Route
-      path="contact"
-      element={
-        <Suspense
-          fallback={
-            <div className="suspense">
-              <Spin className="spin__active" />
-            </div>
-          }
-        >
-          <Contact />
-        </Suspense>
-      }
-    />
+    >
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="projects" element={<Projects />} />
+      <Route path="contact" element={<Contact />} />
+    </Route>
   </Routes>
 );
 

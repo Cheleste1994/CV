@@ -65,3 +65,38 @@ a:active {
   width: 100%;
   height: 100%;
 }
+
+/* PageTransition.css */
+
+/* Эффект появления и исчезновения при входе */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateX(100%);
+  z-index: 1; /* Слой над предыдущей страницей */
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: opacity 300ms, transform 1300ms;
+}
+
+/* Эффект появления и исчезновения при выходе */
+.page-transition-exit {
+  opacity: 1;
+  transform: translateX(0%);
+  z-index: 1; /* Слой над следующей страницей */
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 300ms, transform 1300ms;
+}
+
+/* Общие стили для страницы */
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
