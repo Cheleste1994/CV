@@ -6,6 +6,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "deploy": "git add dist && git commit -m \"feat: add deploy\" && git push origin gh-pages",
+    "gh-deploy-init": "git push origin develop && git subtree push --prefix dist origin gh-pages",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier \"src/**/*.{js,jsx,ts,tsx,css,scss}\" --write",
