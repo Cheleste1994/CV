@@ -10,11 +10,30 @@ const Contact = lazy(() => import('./Contact/Contact'));
 
 const Router: FunctionComponent = () => (
   <Routes>
-    <Route path="/" element={<Home />} />
+    <Route
+      path="/"
+      element={
+        <Suspense
+          fallback={
+            <div className="suspense">
+              <Spin className="spin__active" />
+            </div>
+          }
+        >
+          <Home />
+        </Suspense>
+      }
+    />
     <Route
       path="projects"
       element={
-        <Suspense fallback={<Spin />}>
+        <Suspense
+          fallback={
+            <div className="suspense">
+              <Spin className="spin__active" />
+            </div>
+          }
+        >
           <Projects />
         </Suspense>
       }
@@ -22,7 +41,13 @@ const Router: FunctionComponent = () => (
     <Route
       path="about"
       element={
-        <Suspense fallback={<Spin />}>
+        <Suspense
+          fallback={
+            <div className="suspense">
+              <Spin className="spin__active" />
+            </div>
+          }
+        >
           <About />
         </Suspense>
       }
@@ -30,7 +55,13 @@ const Router: FunctionComponent = () => (
     <Route
       path="contact"
       element={
-        <Suspense fallback={<Spin />}>
+        <Suspense
+          fallback={
+            <div className="suspense">
+              <Spin className="spin__active" />
+            </div>
+          }
+        >
           <Contact />
         </Suspense>
       }
