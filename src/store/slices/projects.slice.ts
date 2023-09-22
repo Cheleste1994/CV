@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import type { RootState } from '..';
-import { fetchReq } from '../../common/request';
-
-const URL_PROJECTS_JSON = 'src/assets/projects.json';
+import dataProjects from '../../assets/projects.json';
 
 interface IProjectsArray {
   name: null | string;
@@ -28,10 +26,10 @@ const initialState: IProjects = {
   count: 0,
 };
 
-export const fetchProjects = createAsyncThunk('projects', async (): Promise<IProjectsArray[]> => {
-  const response = await fetchReq<IProjectsArray[]>(URL_PROJECTS_JSON);
-  return response;
-});
+export const fetchProjects = createAsyncThunk(
+  'projects',
+  async (): Promise<IProjectsArray[]> => dataProjects,
+);
 
 export const projectsSlice = createSlice({
   name: 'projects',
