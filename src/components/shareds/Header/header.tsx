@@ -1,9 +1,9 @@
+import React from 'react';
 import { Button } from '@mui/material';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import CardTravelIcon from '@mui/icons-material/CardTravel';
 import ArtTrackIcon from '@mui/icons-material/ArtTrack';
 import HomeIcon from '@mui/icons-material/Home';
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import './header.scss';

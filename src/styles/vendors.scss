@@ -14,6 +14,7 @@ $menu-size: 250px;
 body {
   font-family: 'Exo', sans-serif;
   overflow: hidden;
+  opacity: 1;
 }
 
 a,
@@ -66,37 +67,57 @@ a:active {
   height: 100%;
 }
 
-/* PageTransition.css */
 
-/* Эффект появления и исчезновения при входе */
-.page-transition-enter {
-  opacity: 0;
-  transform: translateX(100%);
-  z-index: 1; /* Слой над предыдущей страницей */
-}
-
-.page-transition-enter-active {
+.loading-exit {
   opacity: 1;
-  transform: translateX(0%);
-  transition: opacity 300ms, transform 1300ms;
 }
-
-/* Эффект появления и исчезновения при выходе */
-.page-transition-exit {
-  opacity: 1;
-  transform: translateX(0%);
-  z-index: 1; /* Слой над следующей страницей */
-}
-
-.page-transition-exit-active {
+.loading-exit-active {
   opacity: 0;
-  transform: translateX(-100%);
-  transition: opacity 300ms, transform 1300ms;
+  transition: opacity 1000ms;
 }
 
-/* Общие стили для страницы */
-.page {
-  position: absolute;
+
+.page-loading {
+  position: fixed;
+  z-index: 998;
+  background-color: #2c2d2f;
   width: 100%;
   height: 100%;
+  cursor: none;
+  display: flex;
+  font-size: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  gap: 30px;
+
+  .loading__name {
+    position: relative;
+
+    .span_hidden {
+      position: absolute;
+      width: 10px;
+      height: 200%;
+      top: -10px;
+      left: 0;
+      box-shadow: 5px 5px 5px 5px #2c2d2f;
+      transform: rotate(45deg);
+      border-radius: 50%;
+      opacity: 0.5;
+      background-color: #2c2d2f;
+      animation: hidden infinite 2s;
+
+      @keyframes hidden {
+        0% {
+          left: 0px;
+        }
+
+        100% {
+          left: 400px;
+        }
+      }
+    }
+  }
 }
+

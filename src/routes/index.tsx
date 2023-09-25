@@ -1,14 +1,13 @@
-import React, { FunctionComponent, lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Spin } from 'antd';
 import { Routes, Route, Outlet } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group';
 
 const Home = lazy(() => import('./Home'));
 const About = lazy(() => import('./About'));
 const Projects = lazy(() => import('./Projects/Projects'));
 const Contact = lazy(() => import('./Contact/Contact'));
 
-const Router: FunctionComponent = () => (
+const Router = () => (
   <Routes>
     <Route
       path="/"
@@ -20,14 +19,12 @@ const Router: FunctionComponent = () => (
             </div>
           }
         >
-          <CSSTransition in timeout={300} classNames="page-transition" unmountOnExit>
-            <Outlet />
-          </CSSTransition>
+          <Outlet />
         </Suspense>
       }
     >
-      <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
+      <Route path="" element={<Home />} />
+      <Route path="resume" element={<About />} />
       <Route path="projects" element={<Projects />} />
       <Route path="contact" element={<Contact />} />
     </Route>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import LaptopIcon from '@mui/icons-material/Laptop';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Button from '@mui/material/Button';
@@ -10,7 +10,6 @@ import './projects.scss';
 export default function Projects() {
   const dispatch = useAppDispatch();
   const useSelector = useAppSelector(selectProjects);
-  const refDiv = useRef<HTMLDivElement>(null);
 
   const iFrameArray = useSelector.projects.slice(0, useSelector.count).map((project, index) => (
     <div key={project.name || index}>
@@ -48,7 +47,7 @@ export default function Projects() {
   // }, [count, useSelector.length]);
 
   return (
-    <div className="main__projects" ref={refDiv}>
+    <div className="main__projects">
       <div className="title">
         Projects.
         <div className="title__icon">
