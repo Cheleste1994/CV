@@ -3,7 +3,7 @@ import { Spin } from 'antd';
 import { Routes, Route, Outlet } from 'react-router-dom';
 
 const Home = lazy(() => import('./Home'));
-const About = lazy(() => import('./About'));
+const Resume = lazy(() => import('./Resume'));
 const Projects = lazy(() => import('./Projects/Projects'));
 const Contact = lazy(() => import('./Contact/Contact'));
 
@@ -24,7 +24,7 @@ const Router = () => (
       }
     >
       <Route path="" element={<Home />} />
-      <Route path="resume" element={<About />} />
+      <Route path="resume" element={<Resume />} />
       <Route path="projects" element={<Projects />} />
       <Route path="contact" element={<Contact />} />
     </Route>
