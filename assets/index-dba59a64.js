@@ -1,1 +1,0 @@
-import{j as l,a as i}from"./index-13d76f71.js";import{Q as s}from"./index-c4d2672f.js";const a=()=>l("div",{className:"area",children:i("ul",{className:"circles",children:[l("li",{}),l("li",{}),l("li",{}),l("li",{}),l("li",{}),l("li",{}),l("li",{}),l("li",{}),l("li",{}),l("li",{})]})}),o=()=>i("div",{className:"Home",children:[l(s,{}),l(a,{})]});export{o as default};
