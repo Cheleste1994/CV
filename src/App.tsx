@@ -12,6 +12,8 @@ import BurgerMenu from './components/partials/BurgerMenu/BurgerMenu';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isMenu, setMenu] = useState(false);
+
   const csstransitionRef = useRef(null);
   const dispatch = useAppDispatch();
   const location = useLocation();
@@ -45,6 +47,10 @@ const App = () => {
     }, 1000);
   });
 
+  useEffect(() => {
+    setMenu(false);
+  }, [location]);
+
   return (
     <>
       <CSSTransition
@@ -63,8 +69,16 @@ const App = () => {
         </div>
       </CSSTransition>
       <BurgerMenu />
-      <Header />
-      <main className="main">
+      <Header isMenu={isMenu} setMenu={setMenu} />
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
+      <main
+        className="main"
+        onClick={() => {
+          if (isMenu) {
+            setMenu(false);
+          }
+        }}
+      >
         <Router />
       </main>
     </>

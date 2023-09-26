@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@mui/material';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import CardTravelIcon from '@mui/icons-material/CardTravel';
@@ -8,18 +8,19 @@ import { NavLink } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import './header.scss';
 
-export default function Header() {
-  const [isMenu, setMenu] = useState(false);
-
-  const handleBurgerClick = () => {
-    setMenu(!isMenu);
-  };
+export default function Header({
+  isMenu,
+  setMenu,
+}: {
+  isMenu: boolean;
+  setMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   return (
     <header className={`header ${isMenu ? 'header_open' : ''}`}>
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */}
       <div
         className={`burger__icon ${isMenu ? 'burger__icon_open' : ''}`}
-        onClick={handleBurgerClick}
+        onClick={() => setMenu(!isMenu)}
       >
         <span />
         <span />

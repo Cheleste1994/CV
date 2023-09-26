@@ -24,7 +24,7 @@
     user-select: none;
     cursor: url(../assets/cursor.png), none;
     transform: rotateX(50deg);
-
+    overflow: hidden;
     span {
       font-size: 3rem;
       font-weight: 800;
