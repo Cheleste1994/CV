@@ -173,3 +173,27 @@
     }
   }
 }
+
+@media (max-width: 700px) {
+  .contact {
+    padding: 20px 10px;
+
+    .talk {
+      padding: 0;
+      .talk__form {
+        .name,
+        .email {
+          width: 100%;
+        }
+      }
+    }
+
+    .contact__info {
+      flex-wrap: wrap;
+      gap: 10px;
+      .info__item {
+        flex: 1;
+      }
+    }
+  }
+}

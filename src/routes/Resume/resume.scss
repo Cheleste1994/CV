@@ -30,3 +30,14 @@
     }
   }
 }
+
+@media (max-width: 700px) {
+  .resume {
+    padding: 20px 10px;
+
+    .about {
+      flex-wrap: wrap;
+      padding: 0;
+    }
+  }
+}
