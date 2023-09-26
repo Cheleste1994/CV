@@ -8,6 +8,7 @@ import Router from './routes';
 import { useAppDispatch } from './store/hooks';
 import { fetchProjects, incrementCount } from './store/slices/projects.slice';
 import './styles/vendors.scss';
+import BurgerMenu from './components/partials/BurgerMenu/BurgerMenu';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -61,8 +62,9 @@ const App = () => {
           <Spin className="spin__active" size="large" />
         </div>
       </CSSTransition>
+      <BurgerMenu />
       <Header />
-      <main>
+      <main className="main">
         <Router />
       </main>
     </>

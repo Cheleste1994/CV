@@ -1,0 +1,14 @@
+.burger-menu {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #17181bbd;
+  height: 50px;
+}
+
+@media (max-width: 900px) {
+  .burger-menu {
+    display: flex;
+  }
+}
