@@ -6,6 +6,7 @@ import CardTravelIcon from '@mui/icons-material/CardTravel';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { incrementCount, selectProjects } from '../../store/slices/projects.slice';
 import './projects.scss';
+import Navigate from '../../components/partials/Navigate/Navigate';
 
 export default function Projects() {
   const dispatch = useAppDispatch();
@@ -38,14 +39,6 @@ export default function Projects() {
 
   useEffect(() => {}, [useSelector.count]);
 
-  // useEffect(() => {
-  //   if (refDiv.current) {
-  //     if (window.innerHeight > refDiv.current.clientHeight) {
-  //       setCount(count > useSelector.length ? count : count + 1);
-  //     }
-  //   }
-  // }, [count, useSelector.length]);
-
   return (
     <div className="main__projects">
       <div className="title">
@@ -62,6 +55,7 @@ export default function Projects() {
       ) : (
         <div />
       )}
+      <Navigate />
     </div>
   );
 }
