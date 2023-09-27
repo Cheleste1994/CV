@@ -9,6 +9,7 @@ import { useAppDispatch } from './store/hooks';
 import { fetchProjects, incrementCount } from './store/slices/projects.slice';
 import './styles/vendors.scss';
 import BurgerMenu from './components/partials/BurgerMenu/BurgerMenu';
+import dataPerson from './common/dataPerson';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -55,7 +56,7 @@ const App = () => {
     <>
       <CSSTransition
         in={isLoading}
-        timeout={500}
+        timeout={800}
         classNames="loading"
         nodeRef={csstransitionRef}
         unmountOnExit
@@ -63,7 +64,7 @@ const App = () => {
         <div className="page-loading" ref={csstransitionRef}>
           <span className="loading__name">
             <span className="span_hidden" />
-            ANDREI SHAMAYEU
+            {dataPerson.name.toUpperCase()}
           </span>
           <Spin className="spin__active" size="large" />
         </div>

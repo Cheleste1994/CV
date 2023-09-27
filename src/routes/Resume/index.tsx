@@ -1,6 +1,7 @@
 import React from 'react';
 import ArtTrackIcon from '@mui/icons-material/ArtTrack';
 import './resume.scss';
+import dataPerson from '../../common/dataPerson';
 
 const Resume = () => (
   <div className="resume">
@@ -14,14 +15,13 @@ const Resume = () => (
       <div className="about__text">Front-end Developer</div>
       <div className="about__contact">
         <div>Personal Information</div>
-        <div>Name: Philip Watson</div>
-        <div>Age: 26 Years</div>
-        <div>Residence: New York, USA</div>
-        <div>Address: 123 Lorem Ipsum</div>
-        <div>Email: example@example.com</div>
+        <div>Name: {dataPerson.name}</div>
+        <div>Age: {dataPerson.age}</div>
+        <div>Residence: {dataPerson.residence}</div>
+        <div>Address: {dataPerson.address}</div>
+        <div>Email: {dataPerson.email}</div>
       </div>
     </div>
   </div>
 );
-
 export default Resume;

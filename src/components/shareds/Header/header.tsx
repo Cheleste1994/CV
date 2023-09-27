@@ -7,6 +7,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import { NavLink } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import './header.scss';
+import dataPerson from '../../../common/dataPerson';
 
 export default function Header({
   isMenu,
@@ -28,7 +29,7 @@ export default function Header({
       </div>
       <div className="header-main">
         <div className="image-container">
-          <div className="avatar">ANDREI SHAMAYEU</div>
+          <div className="avatar">{dataPerson.name.toUpperCase()}</div>
         </div>
         <div className="nav-container">
           <div className="nav">
