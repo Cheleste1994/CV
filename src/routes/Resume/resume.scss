@@ -1,8 +1,12 @@
 .resume {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 10px;
   padding: 20px 50px;
+  color: rgba(255, 254, 254, 0.733);
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
 
   .title {
     svg {
@@ -12,10 +16,14 @@
     }
   }
 
+  h2 {
+    font-weight: 800;
+  }
+
   .about {
     display: flex;
     justify-content: space-between;
-    gap: 50px;
+    gap: 20px;
     padding: 0 50px;
 
     .about__contact {
@@ -23,21 +31,76 @@
       flex-direction: column;
       gap: 10px;
       white-space: nowrap;
-      :first-child {
+
+      > :first-child {
         font-size: 1.5rem;
         font-weight: 600;
+      }
+
+      .about__title {
+        font-weight: 500;
+        font-size: 1.2rem;
+
+        span {
+          font-weight: 300;
+          font-size: 1rem;
+          color: rgba(255, 254, 254, 1);
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+
+  .about__text {
+    display: flex;
+    flex-direction: column;
+    font-weight: 800;
+    font-size: 1.5rem;
+    padding-right: 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.247);
+
+    .skills {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      font-size: 1.4rem;
+      gap: 10px;
+
+      .skills__title {
+        font-weight: 500;
+        font-size: 1.2rem;
+
+        .skills__text {
+          font-weight: 300;
+          font-size: 1rem;
+          color: rgba(255, 254, 254, 1);
+          padding-left: 10px;
+        }
       }
     }
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
+  .resume {
+    padding: 20px 10px;
+    .about {
+      padding: 0 10px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
   .resume {
     padding: 20px 10px;
 
     .about {
       flex-wrap: wrap;
       padding: 0;
+
+      .about__contact {
+        order: -1;
+      }
     }
   }
 }
