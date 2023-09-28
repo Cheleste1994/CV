@@ -34,6 +34,15 @@ export default function Projects() {
           }
         }}
       />
+      <div className="projects__background">
+        <Button
+          onClick={() => {
+            document.location = project.src || '';
+          }}
+        >
+          {project.name?.toLocaleUpperCase()}
+        </Button>
+      </div>
     </div>
   ));
 
