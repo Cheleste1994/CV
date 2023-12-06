@@ -1,0 +1,119 @@
+.main__projects {
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    width: 100%;
+  }
+
+  .projects {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    gap: 20px;
+    width: 100%;
+
+    div {
+      position: relative;
+      height: 500px;
+
+      .projects__title {
+        position: absolute;
+        max-width: 80px;
+        width: 100%;
+        height: 50px;
+        background-color: #2c2d2f65;
+        border-radius: 20px 20px 20px 0;
+        top: 0;
+        left: 0;
+        display: flex;
+        border: 2px solid #fff;
+        transition: all 1s;
+        z-index: 3;
+
+        svg {
+          padding-left: 10px;
+          height: 100%;
+          width: 30px;
+          transition: all 1s;
+        }
+
+        svg:hover {
+          color: red;
+        }
+      }
+
+      .projects__title:hover {
+        max-width: 100%;
+      }
+
+      .projects__iframe {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        border: 2px solid #fff;
+        background-color: #ffffffde;
+      }
+      .projects__background {
+        position: absolute;
+        background-color: #00000059;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        font-size: 2rem;
+        font-weight: 800;
+        transition: all 0.3s;
+
+        button {
+          color: #fff;
+          font-size: 2rem;
+          font-weight: 800;
+          border: 2px solid #fff;
+          border-radius: 20px;
+          transition: all 0.3s;
+        }
+
+        button:hover {
+          font-size: 2.2rem;
+        }
+      }
+
+      .projects__background:hover {
+        background-color: #00000025;
+      }
+    }
+  }
+
+  .projects__more {
+    margin-top: 30px;
+    width: 200px;
+    color: white;
+    font-size: 1rem;
+    background-color: #00a1e173;
+    border-radius: 10px;
+  }
+
+  .projects__more:hover {
+    background-color: #00a1e1;
+  }
+}
+
+@media (max-width: 700px) {
+  .main__projects {
+    padding: 20px 10px;
+    .projects {
+      > * {
+        height: 400px;
+      }
+    }
+  }
+}
